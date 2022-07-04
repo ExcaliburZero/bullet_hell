@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
     public float sneakMultiplier = 0.5f;
+    public string sneakButton = "Fire2";
 
     public Rigidbody2D rb;
 
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        isSneaking = Input.GetButton("Fire1");
+        isSneaking = Input.GetButton(sneakButton);
     }
 
     void FixedUpdate()
