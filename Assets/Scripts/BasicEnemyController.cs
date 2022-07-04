@@ -2,25 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBulletSpawner : MonoBehaviour
+public class BasicEnemyController : MonoBehaviour
 {
     public GameObject bulletResource;
 
-    public float bulletSpeed = 5.0f;
-    public float cooldown = 0.2f;
+    float shootCooldown = 3.0f;
+    float bulletSpeed = 1.0f;
 
-    Vector2 bulletVelocity = new Vector2(0.0f, 1.0f);
-    float timer = 9999999.0f;
-    bool isShooting;
-
-    void Update() {
-        isShooting = Input.GetButton("Fire1");
-    }
+    float timer = 999999.0f;
+    Vector2 bulletVelocity = new Vector2(0.0f, -1.0f);
 
     void FixedUpdate() {
         timer += Time.fixedDeltaTime;
 
-        if (isShooting && timer >= cooldown) {
+        if (timer >= shootCooldown) {
             timer = 0.0f;
 
             ShootBullet();
@@ -31,7 +26,7 @@ public class PlayerBulletSpawner : MonoBehaviour
         // TODO: create new transform using only the position
         GameObject bulletObj = Instantiate(bulletResource, transform.position, transform.rotation);
 
-        PlayerBullet bullet = bulletObj.GetComponent<PlayerBullet>();
+        BasicEnemyBullet bullet = bulletObj.GetComponent<BasicEnemyBullet>();
         bullet.velocity = bulletVelocity;
         bullet.speed = bulletSpeed;
 
