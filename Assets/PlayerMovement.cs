@@ -5,21 +5,30 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
+    public float sneakMultiplier = 0.5f;
 
     public Rigidbody2D rb;
 
     Vector2 movement;
+    bool isSneaking = false;
 
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        isSneaking = Input.GetButton("Fire1");
     }
 
     void FixedUpdate()
     {
+        // Move position based on user inputs
+        float movementMultiplier = 1.0f;
+        if (isSneaking) {
+            movementMultiplier = sneakMultiplier;
+        }
+
         rb.MovePosition(
-            rb.position + movement * moveSpeed * Time.fixedDeltaTime
+            rb.position + movement * moveSpeed * movementMultiplier * Time.fixedDeltaTime
         );
     }
 }

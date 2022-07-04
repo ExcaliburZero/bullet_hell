@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  sneakMultiplier: 0.5
   rb: {fileID: 604592592}
 --- !u!50 &604592592
 Rigidbody2D:
