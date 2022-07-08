@@ -29,7 +29,7 @@ public class PlayerHealthManager : MonoBehaviour
         }
     }
 
-    bool IsInvincible() {
+    public bool IsInvincible() {
         // Note: This floating point comparison is safe, since we only every update the
         // invincibility time counter in FixedUpdate where we use Math.Max to check it against
         // 0.0f.
