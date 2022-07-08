@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float sneakMultiplier = 0.5f;
     public string sneakButton = "Fire2";
 
-    public Rigidbody2D rb;
-
     Vector2 movement;
     bool isSneaking = false;
 
@@ -28,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
             movementMultiplier = sneakMultiplier;
         }
 
-        rb.MovePosition(
-            rb.position + movement * moveSpeed * movementMultiplier * Time.fixedDeltaTime
+        transform.Translate(
+            movement * moveSpeed * movementMultiplier * Time.fixedDeltaTime
         );
     }
 }

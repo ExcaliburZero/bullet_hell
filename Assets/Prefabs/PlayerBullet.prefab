@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8524295594053657641}
   - component: {fileID: 6547204884039209200}
   - component: {fileID: -3106636803410989070}
-  - component: {fileID: -4938607694295449086}
+  - component: {fileID: 5494354349142840670}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: PlayerBullet
@@ -130,7 +130,7 @@ MonoBehaviour:
   nonCollideableTags:
   - Player
   - PlayerBullet
---- !u!114 &-4938607694295449086
+--- !u!114 &5494354349142840670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
