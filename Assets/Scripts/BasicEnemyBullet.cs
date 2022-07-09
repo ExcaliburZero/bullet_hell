@@ -7,11 +7,13 @@ public class BasicEnemyBullet : MonoBehaviour
     public Vector2 velocity;
     public float speed;
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         transform.Translate(velocity * speed * Time.fixedDeltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D collision) {
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         Debug.Log("Collided with a: " + collision.tag);
     }
 }

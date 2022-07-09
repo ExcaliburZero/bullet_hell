@@ -13,31 +13,40 @@ public class PlayerHealthManager : MonoBehaviour
 
     float remainingInvinsibilityTime = 0.0f;
 
-    void Start() {
+    void Start()
+    {
         currentHealth = maxHealth;
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         this.remainingInvinsibilityTime = Math.Max(0.0f, this.remainingInvinsibilityTime - Time.fixedDeltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "EnemyBullet") {
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemyBullet")
+        {
             Hit(10);
-        } else if (collision.tag == "Enemy") {
+        }
+        else if (collision.tag == "Enemy")
+        {
             Hit(10);
         }
     }
 
-    public bool IsInvincible() {
+    public bool IsInvincible()
+    {
         // Note: This floating point comparison is safe, since we only every update the
         // invincibility time counter in FixedUpdate where we use Math.Max to check it against
         // 0.0f.
         return this.remainingInvinsibilityTime > 0.0f;
     }
 
-    void Hit(int damage) {
-        if (IsInvincible()) {
+    void Hit(int damage)
+    {
+        if (IsInvincible())
+        {
             // Can't take damage while invincible
             return;
         }
@@ -47,16 +56,19 @@ public class PlayerHealthManager : MonoBehaviour
 
         EnterInvincibility(invincibilityTime);
 
-        if (this.currentHealth == this.minHealth) {
+        if (this.currentHealth == this.minHealth)
+        {
             Die();
         }
     }
 
-    void EnterInvincibility(float time) {
+    void EnterInvincibility(float time)
+    {
         this.remainingInvinsibilityTime = time;
     }
 
-    void Die() {
+    void Die()
+    {
         Destroy(this.gameObject);
     }
 }

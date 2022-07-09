@@ -13,21 +13,25 @@ public class PlayerBulletSpawner : MonoBehaviour
     float timer = 9999999.0f;
     bool isShooting;
 
-    void Update() {
+    void Update()
+    {
         isShooting = Input.GetButton("Fire1");
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         timer += Time.fixedDeltaTime;
 
-        if (isShooting && timer >= cooldown) {
+        if (isShooting && timer >= cooldown)
+        {
             timer = 0.0f;
 
             ShootBullet();
         }
     }
 
-    GameObject ShootBullet() {
+    GameObject ShootBullet()
+    {
         // TODO: create new transform using only the position
         GameObject bulletObj = Instantiate(bulletResource, transform.position, transform.rotation);
 

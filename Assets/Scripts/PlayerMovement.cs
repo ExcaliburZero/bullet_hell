@@ -22,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Move position based on user inputs
         float movementMultiplier = 1.0f;
-        if (isSneaking) {
+        if (isSneaking)
+        {
             movementMultiplier = sneakMultiplier;
         }
 
