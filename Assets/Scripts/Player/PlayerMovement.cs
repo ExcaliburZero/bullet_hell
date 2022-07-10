@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5.0f;
-    public float sneakMultiplier = 0.5f;
-    public string sneakButton = "Fire2";
+    float moveSpeed = 5.0f;
+    float sneakMultiplier = 0.5f;
+    string sneakButton = "Fire2";
 
     Vector2 movement;
     bool isSneaking = false;

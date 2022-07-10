@@ -7,7 +7,7 @@ public class PlayerBullet : MonoBehaviour
     public Vector2 velocity;
     public float speed;
 
-    public List<string> nonCollideableTags = new List<string>() { "Player", "PlayerBullet" };
+    List<string> nonCollideableTags = new List<string>() { "Player", "PlayerBullet" };
 
     void FixedUpdate()
     {
