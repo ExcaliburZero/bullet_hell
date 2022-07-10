@@ -97,6 +97,11 @@ public class SpawnEvent : LevelEvent
             string pathText = pathNode.InnerText;
 
             path = ParsePath(pathText);
+
+            // Make sure enemy spawns at beginning of first curve of the path to avoid possible
+            // ghosting issues if the x and y positions disagree
+            x = path[0].p0.x;
+            y = path[0].p0.y;
         }
 
         return new SpawnEvent(enemyType, x, y, arguments, path);

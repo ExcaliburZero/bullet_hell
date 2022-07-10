@@ -16,7 +16,9 @@ public class AimingEnemy : MonoBehaviour
     void Start()
     {
         player = Player.getInstance();
-        shotTimer = 99999.0f;
+
+        // Make sure we don't shoot immediately, would conflict with FollowBezierCurve logic
+        shotTimer = shootCooldown - 0.2f;
     }
 
     void FixedUpdate()

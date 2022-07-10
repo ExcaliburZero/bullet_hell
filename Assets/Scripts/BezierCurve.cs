@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class BezierCurve
 {
-    Vector2 p0;
-    Vector2 p1;
-    Vector2 p2;
-    Vector2 p3;
+    public Vector2 p0;
+    public Vector2 p1;
+    public Vector2 p2;
+    public Vector2 p3;
 
     public BezierCurve(
         Vector2 p0,
