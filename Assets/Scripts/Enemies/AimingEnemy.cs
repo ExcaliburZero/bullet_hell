@@ -38,7 +38,7 @@ public class AimingEnemy : MonoBehaviour
 
         GameObject bulletObj = Instantiate(bulletResource, transform.position, new Quaternion());
 
-        BasicEnemyBullet bullet = bulletObj.GetComponent<BasicEnemyBullet>();
+        EnemyBulletDirectional bullet = bulletObj.GetComponent<EnemyBulletDirectional>();
         bullet.velocity = direction;
         bullet.speed = bulletSpeed;
 
