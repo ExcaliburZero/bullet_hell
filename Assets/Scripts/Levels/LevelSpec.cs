@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelSpec
 {
-    List<LevelEvent> events;
+    public List<LevelEvent> events;
 
     public LevelSpec(List<LevelEvent> events)
     {
@@ -32,7 +32,7 @@ public class LevelSpec
     {
         List<LevelEvent> events = new List<LevelEvent>();
 
-        XmlNodeList eventsNodes = doc.DocumentElement.GetElementsByTagName("Events");
+        XmlNodeList eventsNodes = doc.GetElementsByTagName("Events");
         Debug.Assert(eventsNodes.Count == 1);
         XmlNode eventsNode = eventsNodes[0];
 
