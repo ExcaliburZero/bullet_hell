@@ -9,7 +9,7 @@ public class AimingEnemy : MonoBehaviour
     GameObject player;
 
     float shootCooldown = 4.0f;
-    float bulletSpeed = 1.0f;
+    float bulletSpeed = 2.0f;
 
     float shotTimer;
 

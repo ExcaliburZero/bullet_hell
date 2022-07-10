@@ -4,14 +4,64 @@
             -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
         </Path>
     </Spawn>
+    <Wait timeS="0.4" />
     <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
         <Path>
-            -3.33,0.0 -2.33,0.0 2.33,0.0 3.33,0.0
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
         </Path>
     </Spawn>
+    <Wait timeS="0.4" />
     <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
         <Path>
-            -3.33,1.0 -2.33,1.0 6.33,1.0 7.33,1.0
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
+        </Path>
+    </Spawn>
+    <Wait timeS="0.4" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
+        <Path>
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
+        </Path>
+    </Spawn>
+    <Wait timeS="0.4" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
+        <Path>
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
+        </Path>
+    </Spawn>
+    <Wait timeS="0.4" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
+        <Path>
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
+        </Path>
+    </Spawn>
+    <Wait timeS="0.4" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
+        <Path>
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
+        </Path>
+    </Spawn>
+    <Wait timeS="0.4" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
+        <Path>
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
+        </Path>
+    </Spawn>
+    <Wait timeS="0.4" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
+        <Path>
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
+        </Path>
+    </Spawn>
+    <Wait timeS="0.4" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
+        <Path>
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
+        </Path>
+    </Spawn>
+    <Wait timeS="0.4" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="">
+        <Path>
+            -3.33,5.88 -3.33,0.0 3.33,0.0 3.33,5.88
         </Path>
     </Spawn>
     <Wait timeS="0.4" />
