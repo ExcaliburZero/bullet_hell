@@ -16,7 +16,6 @@ public class PlayerBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collided with a: " + collision.tag);
         if (nonCollideableTags.Contains(collision.tag))
         {
             //Physics.IgnoreCollision(GetComponent<Collider>(), collision.gameObject.GetComponent<Collider>());

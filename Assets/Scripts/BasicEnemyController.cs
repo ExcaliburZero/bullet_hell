@@ -22,7 +22,6 @@ public class BasicEnemyController : MonoBehaviour
             timer = 0.0f;
 
             float offsetDeg = offsets[offsetIndex];
-            Debug.Log("offsetDeg = " + offsetDeg);
 
             ShootBulletsSimple(8, 180.0f + offsetDeg, 360.0f + offsetDeg);
 

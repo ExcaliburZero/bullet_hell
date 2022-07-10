@@ -32,7 +32,7 @@ abstract public class LevelManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (currentEvent.IsDone())
+        if (currentEvent != null && currentEvent.IsDone())
         {
             UpdateEvent(levelSpec.GetNextEventIndex(currentEventIndex));
         }
