@@ -22,6 +22,7 @@ public class SpawnEvent : LevelEvent
 
     public override void Start(EnemyRegistry enemyRegistry)
     {
+        Debug.Assert(enemyRegistry != null);
         this.enemyRegistry = enemyRegistry;
 
         Debug.Assert(enemyType != null);
@@ -32,10 +33,16 @@ public class SpawnEvent : LevelEvent
 
     public override void FixedUpdate()
     {
-        GameObject enemyPrefab = enemyRegistry.enemyPrefabs[enemyType];
+        if (!spawned)
+        {
+            Debug.Assert(enemyRegistry != null);
+            Debug.Assert(enemyRegistry.enemyPrefabs != null);
 
-        Spawn(enemyPrefab);
-        spawned = true;
+            GameObject enemyPrefab = enemyRegistry.enemyPrefabs[enemyType];
+
+            Spawn(enemyPrefab);
+            spawned = true;
+        }
     }
 
     public override bool IsDone()

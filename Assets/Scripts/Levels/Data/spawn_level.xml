@@ -1,0 +1,4 @@
+<Events>
+    <Spawn type="BasicEnemy" x="0.0" y="0.0" arguments="" />
+    <Wait timeS="50.0" />
+</Events>

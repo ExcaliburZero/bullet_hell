@@ -4,21 +4,30 @@ using UnityEngine;
 
 abstract public class LevelManager : MonoBehaviour
 {
-    LevelSpec levelSpec;
+    protected LevelSpec levelSpec;
     int currentEventIndex;
     LevelEvent currentEvent;
     EnemyRegistry enemyRegistry;
 
-    void Start()
+    protected void Start()
     {
-        UpdateEvent(0);
         enemyRegistry = EnemyRegistry.LoadFromPrefabs();
+        Debug.Assert(enemyRegistry != null);
+
+        UpdateEvent(0);
     }
 
     void UpdateEvent(int index)
     {
         currentEventIndex = index;
         currentEvent = levelSpec.GetEvent(index);
+
+        if (currentEvent != null)
+        {
+            Debug.Assert(enemyRegistry != null);
+            currentEvent.Start(enemyRegistry);
+            Debug.Log("Started Event " + currentEventIndex + ": " + currentEvent);
+        }
     }
 
     void FixedUpdate()
@@ -26,10 +35,6 @@ abstract public class LevelManager : MonoBehaviour
         if (currentEvent.IsDone())
         {
             UpdateEvent(levelSpec.GetNextEventIndex(currentEventIndex));
-            if (currentEvent != null)
-            {
-                currentEvent.Start(enemyRegistry);
-            }
         }
 
         if (currentEvent == null)

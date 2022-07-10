@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Xml;
 using UnityEngine;
 
@@ -43,5 +44,17 @@ public class LevelSpec
         }
 
         return new LevelSpec(events);
+    }
+
+    public static LevelSpec ReadLevelSpec(string filepath)
+    {
+        string fullFilepath = Path.Combine(
+            Application.dataPath, "Scripts", "Levels", "Data", filepath
+        );
+
+        XmlDocument xml = new XmlDocument();
+        xml.Load(fullFilepath);
+
+        return LevelSpec.FromXml(xml);
     }
 }

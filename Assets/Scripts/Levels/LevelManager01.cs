@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class LevelManager01 : LevelManager
 {
-    void Start()
+    // TODO: is 'new' correct to use here? Why not 'override'?
+    protected new void Start()
     {
-
-    }
-
-    void FixedUpdate()
-    {
-
+        levelSpec = LevelSpec.ReadLevelSpec("spawn_level.xml");
+        base.Start();
     }
 
     public override void EndLevel()
