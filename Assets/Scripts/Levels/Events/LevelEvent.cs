@@ -12,6 +12,7 @@ abstract public class LevelEvent
         return node.Name switch
         {
             "Wait" => WaitEvent.FromXml(node),
+            "Spawn" => SpawnEvent.FromXml(node),
             _ => throw new ArgumentException("Invalid LevelEvent name: " + node.Name),
         };
     }

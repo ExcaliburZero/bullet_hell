@@ -30,4 +30,16 @@ public class LevelSpecTests
 
         Assert.AreEqual(1, levelSpec.events.Count);
     }
+
+    [Test]
+    public void ParsesLevelWithSpawnEvent()
+    {
+        string filepath = TestUtil.DataFile("spawn_level.xml");
+
+        XmlDocument xml = new XmlDocument();
+        xml.Load(filepath);
+        LevelSpec levelSpec = LevelSpec.FromXml(xml);
+
+        Assert.AreEqual(2, levelSpec.events.Count);
+    }
 }
