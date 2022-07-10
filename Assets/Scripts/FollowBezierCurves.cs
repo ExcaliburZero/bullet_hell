@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowBezierCurves : MonoBehaviour
 {
-    public float movementSpeed = 0.2f;
+    public float movementSpeed = 1.0f;
 
     List<BezierCurve> curves;
 
@@ -27,7 +27,7 @@ public class FollowBezierCurves : MonoBehaviour
             return;
         }
 
-        progress += Time.fixedDeltaTime * movementSpeed;
+        progress += Time.fixedDeltaTime * movementSpeed / curves[currentCurve].ApproximateLength();
 
         if (progress >= FINISHED_CURVE)
         {
