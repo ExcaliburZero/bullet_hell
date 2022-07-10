@@ -1,6 +1,6 @@
 <Events>
-    <Spawn type="BasicEnemy" x="0.0" y="0.0" arguments="" />
+    <Spawn type="AimingEnemy" x="0.0" y="0.0" arguments="" />
     <Wait timeS="2.0" />
-    <Spawn type="BasicEnemy" x="2.0" y="4.0" arguments="" />
+    <Spawn type="AimingEnemy" x="2.0" y="4.0" arguments="" />
     <Wait timeS="4.0" />
 </Events>
