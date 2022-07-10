@@ -6,8 +6,8 @@ public class PlayerBulletSpawner : MonoBehaviour
 {
     public GameObject bulletResource;
 
-    public float bulletSpeed = 5.0f;
-    public float cooldown = 0.2f;
+    float bulletSpeed = 15.0f;
+    float cooldown = 0.1f;
 
     Vector2 bulletVelocity = new Vector2(0.0f, 1.0f);
     float timer = 9999999.0f;
