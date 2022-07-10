@@ -730,8 +730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletResource: {fileID: 8469749092446981193, guid: d4bd35b024dc3183ca343647fc8466c2, type: 3}
-  bulletSpeed: 5
-  cooldown: 0.2
 --- !u!61 &604592594
 BoxCollider2D:
   m_ObjectHideFlags: 0

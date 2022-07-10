@@ -3,6 +3,8 @@ using UnityEngine;
 public class EnemyHealthManager : MonoBehaviour
 {
     public int maxHealth;
+    public GameObject deathEffect;
+
     int minHealth = 0;
 
     int currentHealth = 42;
@@ -33,6 +35,11 @@ public class EnemyHealthManager : MonoBehaviour
 
     void Die()
     {
+        if (deathEffect != null)
+        {
+            Instantiate(deathEffect, transform.position, new Quaternion());
+        }
+
         Destroy(gameObject);
     }
 }
