@@ -18,4 +18,16 @@ public class LevelSpecTests
 
         Assert.AreEqual(0, levelSpec.events.Count);
     }
+
+    [Test]
+    public void ParsesLevelWithOneWaitEvent()
+    {
+        string filepath = TestUtil.DataFile("wait_level.xml");
+
+        XmlDocument xml = new XmlDocument();
+        xml.Load(filepath);
+        LevelSpec levelSpec = LevelSpec.FromXml(xml);
+
+        Assert.AreEqual(1, levelSpec.events.Count);
+    }
 }
