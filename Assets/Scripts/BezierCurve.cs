@@ -1,7 +1,30 @@
 using UnityEngine;
 
-abstract class BezierCurve
+public class BezierCurve
 {
+    Vector2 p0;
+    Vector2 p1;
+    Vector2 p2;
+    Vector2 p3;
+
+    public BezierCurve(
+        Vector2 p0,
+        Vector2 p1,
+        Vector2 p2,
+        Vector2 p3
+    )
+    {
+        this.p0 = p0;
+        this.p1 = p1;
+        this.p2 = p2;
+        this.p3 = p3;
+    }
+
+    public Vector2 GetPositionAt(float t)
+    {
+        return BezierCurve.GetPositionAt(p0, p1, p2, p3, t);
+    }
+
     // Formula from:
     // https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B%C3%A9zier_curves
     public static Vector2 GetPositionAt(
