@@ -18,7 +18,7 @@ public class WaitEvent : LevelEvent
         }
     }
 
-    public override void Start()
+    public override void Start(EnemyRegistry enemyRegistry)
     {
         foreach (WaitCondition condition in conditions)
         {

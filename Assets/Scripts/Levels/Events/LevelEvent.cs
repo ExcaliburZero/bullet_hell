@@ -3,7 +3,7 @@ using System.Xml;
 
 abstract public class LevelEvent
 {
-    public abstract void Start();
+    public abstract void Start(EnemyRegistry enemyRegistry);
     public abstract void FixedUpdate();
     public abstract bool IsDone();
 

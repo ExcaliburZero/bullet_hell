@@ -7,10 +7,12 @@ abstract public class LevelManager : MonoBehaviour
     LevelSpec levelSpec;
     int currentEventIndex;
     LevelEvent currentEvent;
+    EnemyRegistry enemyRegistry;
 
     void Start()
     {
         UpdateEvent(0);
+        enemyRegistry = EnemyRegistry.LoadFromPrefabs();
     }
 
     void UpdateEvent(int index)
@@ -26,7 +28,7 @@ abstract public class LevelManager : MonoBehaviour
             UpdateEvent(levelSpec.GetNextEventIndex(currentEventIndex));
             if (currentEvent != null)
             {
-                currentEvent.Start();
+                currentEvent.Start(enemyRegistry);
             }
         }
 
