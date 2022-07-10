@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
@@ -7,17 +8,19 @@ public class SpawnEvent : LevelEvent
     public float x;
     public float y;
     public string arguments;
+    public List<BezierCurve> path;
 
     EnemyRegistry enemyRegistry;
 
     bool spawned;
 
-    public SpawnEvent(string enemyType, float x, float y, string arguments)
+    public SpawnEvent(string enemyType, float x, float y, string arguments, List<BezierCurve> path)
     {
         this.enemyType = enemyType;
         this.x = x;
         this.y = y;
         this.arguments = arguments;
+        this.path = path;
     }
 
     public override void Start(EnemyRegistry enemyRegistry)
@@ -56,6 +59,14 @@ public class SpawnEvent : LevelEvent
         Quaternion rotation = new Quaternion();
         GameObject enemy = Object.Instantiate(enemyPrefab, position, rotation);
 
+        if (path != null)
+        {
+            FollowBezierCurves follower = enemy.GetComponent<FollowBezierCurves>();
+            Debug.Assert(follower != null);
+
+            follower.SetCurves(path);
+        }
+
         return enemy;
     }
 
@@ -79,6 +90,44 @@ public class SpawnEvent : LevelEvent
         Debug.Assert(argumentsAttr != null);
         string arguments = argumentsAttr.Value;
 
-        return new SpawnEvent(enemyType, x, y, arguments);
+        List<BezierCurve> path = null;
+        if (node.HasChildNodes)
+        {
+            XmlNode pathNode = node["Path"];
+            string pathText = pathNode.InnerText;
+
+            path = ParsePath(pathText);
+        }
+
+        return new SpawnEvent(enemyType, x, y, arguments, path);
+    }
+
+    static List<BezierCurve> ParsePath(string pathText)
+    {
+        List<BezierCurve> curves = new List<BezierCurve>();
+        foreach (string lineRaw in pathText.Split("\n"))
+        {
+            string line = lineRaw.Trim();
+            if (line == "")
+            {
+                continue;
+            }
+
+            List<Vector2> points = new List<Vector2>();
+            foreach (string pointStr in line.Split(" "))
+            {
+                var parts = pointStr.Split(",");
+                float x = ParsingUtils.StringToFloat(parts[0]);
+                float y = ParsingUtils.StringToFloat(parts[1]);
+
+                points.Add(new Vector2(x, y));
+            }
+
+            Debug.Assert(points.Count == 4);
+
+            curves.Add(new BezierCurve(points[0], points[1], points[2], points[3]));
+        }
+
+        return curves;
     }
 }

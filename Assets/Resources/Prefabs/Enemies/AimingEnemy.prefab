@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4553340213347980517}
   - component: {fileID: 7103409905231996993}
   - component: {fileID: 7306091697931448133}
+  - component: {fileID: 1936559932692656745}
   m_Layer: 0
   m_Name: AimingEnemy
   m_TagString: Untagged
@@ -115,4 +116,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletResource: {fileID: 7640609311871214619, guid: 1a2d4cdf8482390d6b6fcf458410a9e6, type: 3}
-  player: {fileID: 0}
+--- !u!114 &1936559932692656745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6011119085923358552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51e77bf73c4b1a779c1e1e9bfb29cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0.2
