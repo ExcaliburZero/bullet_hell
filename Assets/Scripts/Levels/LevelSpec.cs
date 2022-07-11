@@ -46,14 +46,13 @@ public class LevelSpec
         return new LevelSpec(events);
     }
 
-    public static LevelSpec ReadLevelSpec(string filepath)
+    public static LevelSpec ReadLevelSpec(string filename)
     {
-        string fullFilepath = Path.Combine(
-            Application.dataPath, "Scripts", "Levels", "Data", filepath
-        );
+        TextAsset levelXmlFile = Resources.Load<TextAsset>(Path.Combine("Data", filename));
+        Debug.Assert(levelXmlFile != null);
 
         XmlDocument xml = new XmlDocument();
-        xml.Load(fullFilepath);
+        xml.LoadXml(levelXmlFile.text);
 
         return LevelSpec.FromXml(xml);
     }

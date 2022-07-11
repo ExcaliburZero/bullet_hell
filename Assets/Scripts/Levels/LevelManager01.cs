@@ -7,7 +7,7 @@ public class LevelManager01 : LevelManager
     // TODO: is 'new' correct to use here? Why not 'override'?
     protected new void Start()
     {
-        levelSpec = LevelSpec.ReadLevelSpec("spawn_level.xml");
+        levelSpec = LevelSpec.ReadLevelSpec("spawn_level");
         base.Start();
     }
 
